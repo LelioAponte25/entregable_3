@@ -1,0 +1,425 @@
+.resident {
+    width: 100%;
+    max-width: 300px;
+    background-color: #072226;
+    color: white;
+    border-radius: 1em;
+    overflow: hidden;
+    box-shadow: 1px 1px 12px #000;
+}
+
+.resident-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Ajusta el ancho mínimo y máximo de las columnas */
+    gap: 20px; /* Espacio entre las tarjetas */
+    margin-top: 80px;
+    margin: 40px;
+}
+
+
+.resident:hover {
+    transform: scale(1.03);
+}
+
+.resident__header {
+    position: relative;
+}
+
+.resident__status{
+    position: absolute;
+    top: 2.5em;
+    background-color: #072226;
+    width: 35%;
+    padding: 0.3em 0.7em;
+    border-radius: 0 0.5em 0.5em 0 ;
+    display: flex;
+    gap: 0.4em;
+    align-items: center;
+}
+
+.resident__status__circle {
+    display: block;
+    width: 14px;
+    aspect-ratio: 1;
+    background-color: #aaa;
+    border-radius: 50%;
+}
+
+.Alive {
+    background-color:rgba(111, 255, 111, 0.911) ;
+}
+.Dead {
+    background-color: red;
+}
+.resident__body {
+    padding: 1.5em 1em 2.5em;
+}
+
+.resident__name {
+    text-align: center;
+    margin-bottom: 0.5em;
+    font-weight: 700;
+    color: rgba(111, 255, 111, 0.911);
+}
+
+.resident__separator {
+    margin-bottom: 0.5em;
+    border-color: #aaa3;
+}
+
+.resident__list {
+    display: grid;
+    gap: 0.7em;
+}
+
+.resident__item {
+    display: flex;
+    flex-direction: column;
+}
+
+.resident__label {
+    padding-left: 1em;
+    font-size: 0.9em;
+    color: #aaa;
+}
+
+.resident__value {
+    font-weight: 500;
+}
+
+/*form center*/
+.form__center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 30px;
+}
+
+/*input*/
+.input {
+    border: none;
+    outline: none;
+    border-radius: 15px;
+    padding: 0.5em 2em;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: #ccc;
+    box-shadow: inset 2px 5px 10px rgba(0,0,0,0.3);
+    transition: 300ms ease-in-out;
+    font-size: 20px;
+}
+
+.input:focus {
+    background-color: white;
+    transform: scale(1.05);
+    box-shadow: 13px 13px 100px #969696,
+                -13px -13px 100px #ffffff;
+}
+
+/*boton*/
+.search {
+    outline: none;
+    cursor: pointer;
+    border: none;
+    padding: 0.9rem 1rem;
+    margin: 1em;
+    font-family: inherit;
+    font-size: inherit;
+    position: relative;
+    display: inline-block;
+    letter-spacing: 0.05rem;
+    font-weight: 700;
+    font-size: 17px;
+    border-radius: 500px;
+    overflow: hidden;
+    background: #66ff66;
+    color: ghostwhite;
+}
+
+.search span {
+    position: relative;
+    z-index: 10;
+    transition: color 0.4s;
+}
+
+.search:hover span {
+    color: black;
+}
+
+.search::before,
+.search::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.search::before {
+    content: "";
+    background: #000;
+    width: 120%;
+    left: -10%;
+    transform: skew(30deg);
+    transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+}
+
+.search:hover::before {
+    transform: translate3d(100%, 0, 0);
+}
+
+/*encabezado*/
+
+
+
+.container__img{
+    background-image: url('https://c4.wallpaperflare.com/wallpaper/178/471/787/rick-and-morty-run-the-jewels-vector-graphics-wallpaper-preview.jpg');
+    height: 44vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    z-index: 1;
+    
+}
+
+.img__item {
+    width: 1200px;
+    height: 365px;
+    z-index: 2;
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Rick_and_Morty.svg/1200px-Rick_and_Morty.svg.png');
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -100px;
+}
+
+/*Boton de paginacion*/
+.next {
+    padding: 10px 40px;
+    font-size: 18px;
+    background-color: #008542;
+    color: #fff;
+    text-shadow: 0 2px 0 rgb(0 0 0 / 25%);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border: 0;
+    z-index: 1;
+    user-select: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    white-space: unset;
+    padding: .8rem 1.5rem;
+    text-decoration: none;
+    font-weight: 900;
+    transition: all 0.7s cubic-bezier(0,.8,.26,.99);
+    margin-right: 5px;
+}
+
+.next:before {
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    content: '';
+    transition: .7s cubic-bezier(0,.8,.26,.99);
+    z-index: -1;
+    background-color: #008542!important;
+    box-shadow: 0 -4px rgb(21 108 0 / 50%) inset, 0 4px rgb(100 253 31 / 99%) inset, -4px 0 rgb(100 253 31 / 50%) inset, 4px 0 rgb(21 108 0 / 50%) inset;
+}
+
+.next:after {
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    content: '';
+    box-shadow: 0 4px 0 0 rgb(0 0 0 / 15%);
+    transition: .7s cubic-bezier(0,.8,.26,.99);
+}
+
+.next:hover:before {
+    box-shadow: 0 -4px rgb(0 0 0 / 50%) inset, 0 4px rgb(255 255 255 / 20%) inset, -4px 0 rgb(255 255 255 / 20%) inset, 4px 0 rgb(0 0 0 / 50%) inset;
+}
+
+.next:hover:after {
+    box-shadow: 0 4px 0 0 rgb(0 0 0 / 15%);
+}
+
+.next:active {
+    transform: translateY(4px);
+}
+
+.next:active:after {
+    box-shadow: 0 0px 0 0 rgb(0 0 0 / 15%);
+}
+
+/*botn de paginacion 2*/
+.prev {
+    padding: 10px 40px;
+    font-size: 18px;
+    background-color: #008542;
+    color: #fff;
+    text-shadow: 0 2px 0 rgb(0 0 0 / 25%);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border: 0;
+    z-index: 1;
+    user-select: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    white-space: unset;
+    padding: .8rem 1.5rem;
+    text-decoration: none;
+    font-weight: 900;
+    transition: all 0.7s cubic-bezier(0,.8,.26,.99);
+    margin-left: 5px;
+}
+
+.prev:before {
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    content: '';
+    transition: .7s cubic-bezier(0,.8,.26,.99);
+    z-index: -1;
+    background-color: #008542!important;
+    box-shadow: 0 -4px rgb(21 108 0 / 50%) inset, 0 4px rgb(100 253 31 / 99%) inset, -4px 0 rgb(100 253 31 / 50%) inset, 4px 0 rgb(21 108 0 / 50%) inset;
+}
+
+.prev:after {
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    content: '';
+    box-shadow: 0 4px 0 0 rgb(0 0 0 / 15%);
+    transition: .7s cubic-bezier(0,.8,.26,.99);
+}
+
+.prev:hover:before {
+    box-shadow: 0 -4px rgb(0 0 0 / 50%) inset, 0 4px rgb(255 255 255 / 20%) inset, -4px 0 rgb(255 255 255 / 20%) inset, 4px 0 rgb(0 0 0 / 50%) inset;
+}
+
+.prev:hover:after {
+    box-shadow: 0 4px 0 0 rgb(0 0 0 / 15%);
+}
+
+.prev:active {
+    transform: translateY(4px);
+}
+
+.prev:active:after {
+    box-shadow: 0 0px 0 0 rgb(0 0 0 / 15%);
+}
+
+/*botn de los numeros*/
+
+button {
+    font-family: monospace;
+    background-color: #f3f7fe;
+    color: #3b82f6;
+    border: none;
+    border-radius: 8px;
+    width: 100px;
+    height: 45px;
+    transition: .3s;
+    margin-left: 0.7px;
+}
+
+button:hover {
+    background-color: #3b82f6;
+    box-shadow: 0 0 0 5px #008542;
+    color: #fff;
+}
+
+/*contenedor de numeros*/
+.pagination {
+    margin: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/*caja de error*/
+.container__error {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    height: 100vh; /* Establece la altura para ocupar toda la ventana visible */
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo semitransparente */
+    position: fixed; /* Coloca el contenedor sobre otros elementos */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 999; /* Asegura que el mensaje esté en la parte superior */
+}
+
+.container__error h2 {
+    color: white; /* Color del texto */
+    background-color: #ff0000; /* Color de fondo */
+    padding: 20px; /* Espaciado interno */
+    border-radius: 10px; /* Bordes redondeados */
+}
+
+/*diseño de sugerencia de busquedad*/
+
+/* Estilo para la lista de sugerencias */
+.suggested-locations {
+    margin: 50px;
+    width: 30%;
+    height: 10%;
+    padding: 10px;
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items:center ;
+    justify-content: center;
+    z-index: 3;
+    margin-left: 30%;
+}
+
+.suggested-locations ul {
+    list-style: none;
+    padding: 0;
+}
+
+.suggested-locations li {
+    padding: 5px 10px;
+    margin-left: 10px 50px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.suggested-locations li:hover {
+    background-color: #e0e0e0;
+}
